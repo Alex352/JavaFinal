@@ -1,0 +1,45 @@
+package thefinal;
+
+import java.util.Scanner;
+public class Shelter 
+{
+
+	private static Scanner input;
+	
+	static void stayInShelter()
+	{
+	
+		String choiceYes = null;
+		String choiceNo = null;
+		String quit = null;
+		
+		input = new Scanner(System.in);
+
+		System.out.println(" 'You are really bored, but you see a pair of dice? Play Dice Yes or No'");
+		choiceYes = input.nextLine();
+		if("Yes".equals(choiceYes))
+		{
+			System.out.println("'You begin to play Farkle by yourself'");
+		     
+			int rollCount = 0;
+	           do{ 
+	              DiceGame.roll(); 
+	               rollCount++;
+	               System.out.println("To quit type No otherwise type Yes to play again.");
+	               quit = input.nextLine();
+	           }while ("Yes".equals(quit) ||"yes".equals(quit));
+		
+	        System.out.println("'After " + rollCount +" rolls you finally are bored and want to move on.'");
+	        System.out.println("'I should go outside'");
+	    	choiceNo = input.nextLine();
+		}
+		else
+			if("No".equals(choiceNo)){
+			
+				System.out.println("'I should go outside'");
+				Boy.leaveShelter();
+			}
+	
+			
+	}
+		}
